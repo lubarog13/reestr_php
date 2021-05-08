@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Аудитории</title>
+<title>Здания</title>
 <link rel="stylesheet" href="select_style.css" type="text/css">
 <style>
 html {
