@@ -36,10 +36,6 @@ div.grp {
 </head>
 <body>
     <div class="grp">
-    <h4>Удалено!</h4>
-    <p><button type="button" class = "add" name="btn" value="back" onclick="window.location.href = 'http://localhost/reestr_project/zones.php';"> Back </button></p>
-    </div>
-</body>
 <?php
     if(isset($_GET['zone_name']) ){
         $dbuser = 'postgres';
@@ -50,10 +46,15 @@ div.grp {
         $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $dbuser, $dbpass);
         try{
         $pdo->prepare("DELETE FROM zone_addres WHERE zone_name='".$_GET['zone_name']."'")->execute();
+        echo "<h4>Удалено!</h4>";
     }
         catch(PDOException $e){
-            echo $e;
+            echo "<h4>Что-то пошло не так</h4>";
         }
 
     }
 ?>
+<p><button type="button" class = "add" name="btn" value="back" onclick="window.location.href = 'http://localhost/reestr_project/zones.php';"> Back </button></p>
+    </div>
+</body>
+</html>
